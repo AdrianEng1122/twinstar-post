@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-paper: #f7f4ec;
+  --color-ink: #141414;
+  --font-serif-sc: "Noto Serif SC", "Songti SC", serif;
+  --font-sans-sc: "Noto Sans SC", "PingFang SC", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-feature-settings: "palt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #141414;
+    color: #f7f4ec;
+  }
+}
+
+/* Custom Editorial Newspaper Styling */
+.newsprint-border-double {
+  border-top: 4px double #141414;
+  border-bottom: 4px double #141414;
+}
+
+.newsprint-border-thick-thin {
+  border-top: 3px solid #141414;
+  border-bottom: 1px solid #141414;
+}
+
+.newspaper-columns {
+  column-gap: 2rem;
+  column-rule: 1px solid #d8d3c5;
+}
+
+/* Subtle newspaper paper grain pattern */
+.bg-newsprint {
+  background-color: #f7f4ec;
+  background-image: radial-gradient(#141414 0.4px, transparent 0.4px);
+  background-size: 16px 16px;
+  background-position: 0 0;
+  opacity: 0.98;
+}
+
+/* Halftone dot effect for editorial photos */
+.editorial-halftone {
+  position: relative;
+}
+
+.editorial-halftone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Traditional Chinese vertical text layout class for editorial quotes/columns */
+.writing-vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee7d5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8b4a9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7b776f;
+}
